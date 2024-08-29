@@ -21,25 +21,26 @@
 <?php 
 
 function getPageNameWithoutExtension($url) {
-    
-     // Parse the URL to get the path
-     $parsedUrl = parse_url($url);
-     $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '';
- 
-     // If the path is empty or just a single '/', set it to 'index'
-     if (empty($path) || $path === '/') {
-         return 'index';
-     }
- 
-     // Remove leading '/' if present to handle cases where the path starts with '/'
-     $path = ltrim($path, '/');
- 
-     // Get the filename and extension from the path
-     $pathInfo = pathinfo($path);
-     
-     // Return the filename without the extension
-     return isset($pathInfo['filename']) ? $pathInfo['filename'] : '';
+    // Parse the URL to get the path
+    $parsedUrl = parse_url($url);
+    $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '';
 
+    // If the path is empty or just a single '/', set it to 'index'
+    if (empty($path) || $path === '/') {
+        return 'index';
+    }
+
+    // Remove leading '/' if present to handle cases where the path starts with '/'
+    $path = ltrim($path, '/');
+
+    // Get the filename without the query parameters
+    $path = explode('?', $path)[0];
+
+    // Get the filename and extension from the path
+    $pathInfo = pathinfo($path);
+
+    // Return the filename without the extension
+    return isset($pathInfo['filename']) ? $pathInfo['filename'] : '';
 }
 
 ?>

@@ -180,11 +180,14 @@ function getPageNameWithoutExtension($url) {
             // Extract the last segment after the last '/'
             var lastSegment = url.split('/').pop();
 
+            // Remove the query parameters (everything after '?')
+            lastSegment = lastSegment.split('?')[0];
+
             // Remove the '.php' extension
             lastSegment = lastSegment.replace('.php', '');
 
-            if(lastSegment == "")
-            {
+            // Set "index" if the lastSegment is empty
+            if (lastSegment == "") {
                 lastSegment = "index";
             }
 
