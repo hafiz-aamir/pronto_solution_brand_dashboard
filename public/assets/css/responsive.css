@@ -1,0 +1,74 @@
+@media only screen and (max-width: 1600px) {
+    .icon-img-main-page{
+        width: 40px;
+        height: 40px;
+      }
+      .login-box {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 999px) {
+    .main-dashboard-content-parent, .topbar-main{
+      width: 100%;
+    }
+
+    /* .left-sidebar, .btn-and-profile-parent{
+        display: none;
+    } */
+
+    .topbar-main {
+        padding: 1.2rem 1rem;
+    }
+
+    .main-dashboard-content-parent {
+        margin-top: 85px;
+    }
+    .logout-btn {
+        min-width: 130px;
+    }
+    .login-box {
+        width: 55%;
+    }
+
+    
+
+    .login-btn a, .login-btn button {
+        min-width: 143px;
+    }
+    .login-box-inner {
+        width: 80%;
+        padding: 3rem 0;
+    }
+    .login-head-para p {
+        font-size: 16px;
+    }
+  }
+
+  @media only screen and (max-width: 767px){
+    .login-box {
+        width: 85%;
+    }
+
+    .table-card{
+        overflow-x: scroll;
+        overflow-y: visible;
+    }
+
+    .table-card table {
+        min-width: 1060px;
+    }
+    .main-dashboard-content-parent {
+        padding: 1.5rem 1.3rem;
+    }
+    .filter-box-parent {
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .filter-box-inner-btn{
+        border: none;
+        border-right: none;
+    }
+  }
